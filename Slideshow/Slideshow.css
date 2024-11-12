@@ -1,0 +1,77 @@
+.slideshow-container {
+  margin: auto;
+  max-width: 1000px;
+  position: relative;
+}
+
+.my-slides {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  /* Giữ nguyên tỷ lệ của ảnh */
+  object-fit: cover;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 0 3px;
+  color: white;
+  width: auto;
+  padding: 16px;
+}
+
+.next {
+  right: 0;
+  border-radius: 0 3px 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  position: absolute;
+  bottom: 8px;
+  text-align: center;
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0px 2px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  background-color: #bbb;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Tab.css">
+    <link rel="stylesheet" href="/main.css">
+
+
+    <style>
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+            height: 20px;
+        }
+
+        .accordion {
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+            text-align: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .accordion.active {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="accordion">Secction 1</button>
+    <div class="panel">
+        <p>Lorem ipsum...</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var acc = document.getElementsByClassName("accordion");
+
+            for (var i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style
+                            .maxHeight = panel.scrollHeight + "50px";
+                        panel.style.maxWith = panel.scrollWith + "50px";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
